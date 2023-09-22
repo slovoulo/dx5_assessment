@@ -16,7 +16,7 @@ class UpdateDialog extends StatefulWidget {
   String title;
   String description;
   String genre;
-  bool isUpdating;
+  bool isUpdating;  ///This value is used to determine whether a user is creating or updating a game
 
   UpdateDialog(
       {Key? key,
@@ -74,7 +74,7 @@ class _UpdateDialogState extends State<UpdateDialog> {
           GamesModel.serializer, json.decode(response.toString()));
     } catch (e) {
       Fluttertoast.showToast(
-          msg: 'An error occured', backgroundColor: kDeleteColor);
+          msg: 'An error occurred', backgroundColor: kDeleteColor);
       updateData = null;
       debugPrint('error: $e');
     }
@@ -105,7 +105,7 @@ class _UpdateDialogState extends State<UpdateDialog> {
           GamesModel.serializer, json.decode(response.toString()));
     } catch (e) {
       Fluttertoast.showToast(
-          msg: 'An error occured', backgroundColor: kDeleteColor);
+          msg: 'An error occurred', backgroundColor: kDeleteColor);
       createData = null;
       debugPrint('error: $e');
     }

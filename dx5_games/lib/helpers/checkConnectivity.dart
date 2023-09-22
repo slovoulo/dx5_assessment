@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart';
 
+
+///Boilerplate code for checking internet connection
 class ConnectionUtil {
   static final ConnectionUtil _singleton =  ConnectionUtil._internal();
   ConnectionUtil._internal();
