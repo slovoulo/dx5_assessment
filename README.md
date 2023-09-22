@@ -23,14 +23,15 @@ DX5 assessment solution
     This is flutter code that builds a mobile app which fetches data from the provided node_api
 
   ### Instructions:
-    * While in the project directory run:flutter pub get to fetch the required dependencies
-    * Ensure you have an emulator running or physical device connected Then run : flutter run  to start the app
+    * While in the project directory run: `flutter pub get` to fetch the required dependencies
+    * Ensure you have an emulator running or physical device connected Then run : `flutter run`  to start the app
  
   ### How it works
   * The app starts by calling a get function to fetch all games from the API
   * During the initial call, user's internet connectivity is also checked.
   * If the user has internet then the data from the API will be displayed in a list
   * If there is no internet a snackbar will notify the user while the app listens for connection updates
+  * The app uses Dio package to fetch data
 
   ### Extras
   Fetching and displaying data from the API was straight forward so I also implemented Create, Update and Delete on the mobile client
