@@ -1,7 +1,7 @@
 import "dart:core";
 
 class GameModel {
-  final int id;
+  final int? id;
   final String title;
   final String description;
   final String genre;
@@ -20,7 +20,7 @@ class GameModel {
   int get hashCode => super.hashCode;
 }
 
-List<GameModel> Game = GamesData.map((e) => GameModel(
+List<GameModel> game = gamesData.map((e) => GameModel(
 
   e['id'] as int,
   e['title'] as String,
@@ -29,4 +29,4 @@ List<GameModel> Game = GamesData.map((e) => GameModel(
 
 )).toList();
 
-var GamesData = [];
+var gamesData = [];

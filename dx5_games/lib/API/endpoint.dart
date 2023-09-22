@@ -1,4 +1,4 @@
 class ApiEndPoints {
-  static const GAMES_URL = '/gamesapi/v1/games';
+  static const gamesURL = '/gamesapi/v1/games';
  
 }

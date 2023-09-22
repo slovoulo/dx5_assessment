@@ -63,8 +63,6 @@ class _$GamesResultsSerializer implements StructuredSerializer<GamesResults> {
   Iterable<Object?> serialize(Serializers serializers, GamesResults object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(int)),
       'title',
       serializers.serialize(object.title,
           specifiedType: const FullType(String)),
@@ -75,7 +73,13 @@ class _$GamesResultsSerializer implements StructuredSerializer<GamesResults> {
       serializers.serialize(object.genre,
           specifiedType: const FullType(String)),
     ];
-
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -93,7 +97,7 @@ class _$GamesResultsSerializer implements StructuredSerializer<GamesResults> {
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'title':
           result.title = serializers.deserialize(value,
@@ -208,7 +212,7 @@ class GamesModelBuilder implements Builder<GamesModel, GamesModelBuilder> {
 
 class _$GamesResults extends GamesResults {
   @override
-  final int id;
+  final int? id;
   @override
   final String title;
   @override
@@ -220,12 +224,11 @@ class _$GamesResults extends GamesResults {
       (new GamesResultsBuilder()..update(updates))._build();
 
   _$GamesResults._(
-      {required this.id,
+      {this.id,
       required this.title,
       required this.description,
       required this.genre})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'GamesResults', 'id');
     BuiltValueNullFieldError.checkNotNull(title, r'GamesResults', 'title');
     BuiltValueNullFieldError.checkNotNull(
         description, r'GamesResults', 'description');
@@ -322,8 +325,7 @@ class GamesResultsBuilder
   _$GamesResults _build() {
     final _$result = _$v ??
         new _$GamesResults._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'GamesResults', 'id'),
+            id: id,
             title: BuiltValueNullFieldError.checkNotNull(
                 title, r'GamesResults', 'title'),
             description: BuiltValueNullFieldError.checkNotNull(

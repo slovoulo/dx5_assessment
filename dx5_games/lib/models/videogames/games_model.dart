@@ -19,7 +19,7 @@ abstract class GamesModel
 abstract class GamesResults
     implements Built<GamesResults, GamesResultsBuilder> {
 
-  int get id;
+  int? get id;
   String get title;
   String get description;
   String get genre;
@@ -27,6 +27,13 @@ abstract class GamesResults
 
 
   GamesResults._();
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "title": title,
+    "description": description,
+    "genre": genre,
+
+  };
   factory GamesResults([updates(GamesResultsBuilder b)]) =
   _$GamesResults;
   static Serializer<GamesResults> get serializer =>
