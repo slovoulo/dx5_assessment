@@ -12,6 +12,14 @@ const kTextColorGrey = Color(0xFF9E9E9E);
 const kDeleteColor = Color(0xFF880808);
 const kSuccessGreen = Color(0xFF4CAF50);
 
+verticalSpace({required double height}){
+  return SizedBox(height: height,);
+}
+
+horizontalSpace({required double width}){
+  return SizedBox(width: width,);
+}
+
 //REUSABLE TEXT STYLE BLUEPRINT
 TextStyle kDescriptionTextStyle(
   double fontSize,

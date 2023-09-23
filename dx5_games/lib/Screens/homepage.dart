@@ -118,7 +118,10 @@ class _HomePageState extends State<HomePage> {
                       style: kBoldBlackTextStyle(15),
                     ),
                   ),
-                  Flexible(child: Text(description,textAlign: TextAlign.start,style: kDescriptionTextStyle(12))),
+                  verticalSpace(height: 4),
+                  Flexible(child: Text(description,textAlign: TextAlign.start,style: kDescriptionTextStyle(12),overflow:TextOverflow.ellipsis ,)),
+                  verticalSpace(height: 8),
+
                   Flexible(child: Text(genre,textAlign: TextAlign.start,style: kDescriptionTextStyle(12),))
 
 
