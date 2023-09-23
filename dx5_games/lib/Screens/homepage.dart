@@ -109,17 +109,21 @@ class _HomePageState extends State<HomePage> {
         ),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: kBoldBlackTextStyle(15),
-                ),
-                Text(description,textAlign: TextAlign.start,style: kDescriptionTextStyle(12),),
-                Text(genre,textAlign: TextAlign.start,style: kDescriptionTextStyle(12),)
+            SizedBox(width: MediaQuery.of(context).size.width*0.75,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Flexible(
+                    child: Text(
+                      title,
+                      style: kBoldBlackTextStyle(15),
+                    ),
+                  ),
+                  Flexible(child: Text(description,textAlign: TextAlign.start,style: kDescriptionTextStyle(12))),
+                  Flexible(child: Text(genre,textAlign: TextAlign.start,style: kDescriptionTextStyle(12),))
 
 
-              ],
+                ],
+              ),
             ),
             Column(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
               children: [ 
@@ -145,7 +149,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  fetchingTodos() {
+  fetchingGames() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -181,7 +185,7 @@ class _HomePageState extends State<HomePage> {
           body:
           Visibility(
             visible: isBusy ? false : true,
-            replacement: fetchingTodos(),
+            replacement: fetchingGames(),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView.separated(
