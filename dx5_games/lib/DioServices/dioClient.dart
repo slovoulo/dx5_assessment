@@ -1,6 +1,7 @@
 import "package:dio/dio.dart";
 
-import '../API/baseurl.dart';
+import "../API/baseURL.dart";
+
 
 
 ///This class sets up Dio to to use the base URL to fetch data
